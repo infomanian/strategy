@@ -1,0 +1,130 @@
+/* static/styles.css - ساده و RTL */
+:root {
+    --bg: #f7fafc;
+    --card: #ffffff;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0ea5a4;
+    --border: #e2e8f0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: "Vazirmatn", "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.container {
+    max-width: 900px;
+    margin: 28px auto;
+    padding: 16px;
+}
+
+h1 {
+    margin: 0 0 12px;
+    font-size: 24px;
+}
+
+.muted {
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    margin: 12px 0;
+    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.03);
+}
+
+fieldset {
+    border: 1px dashed var(--border);
+    padding: 10px;
+    border-radius: 8px;
+    margin: 8px 0;
+}
+
+legend {
+    padding: 0 6px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    background: #fff;
+    color: var(--text);
+}
+
+.actions {
+    margin-top: 12px;
+}
+
+button,
+.btn {
+    background: var(--accent);
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button[disabled] {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.kv {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 6px 12px;
+}
+
+.kv li {
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--border);
+}
+
+.output {
+    white-space: pre-wrap;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.5;
+}
+
+.mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+    white-space: pre-wrap;
+    padding: 10px;
+    background: #f8fafc;
+    border-radius: 6px;
+}
+
+.footer {
+    color: var(--muted);
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.small {
+    font-size: 14px;
+}

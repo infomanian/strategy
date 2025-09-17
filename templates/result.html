@@ -1,0 +1,38 @@
+<!-- templates/result.html -->
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{ title }} - نتیجه</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>نتیجه مشاوره</h1>
+
+    <section class="card">
+      <h2>خلاصه ورودی</h2>
+      <ul class="kv">
+        <li><b>نقش:</b> {{ "کاربر عادی" if role=="user" else "وکیل" }}</li>
+        <li><b>عنوان:</b> {{ title_input or "—" }}</li>
+      </ul>
+      <h3>شرح پرونده:</h3>
+      <div class="mono card small">{{ details_input }}</div>
+    </section>
+
+    <section class="card">
+      <h2>پاسخ هوش مصنوعی</h2>
+      <pre class="output">{{ answer }}</pre>
+    </section>
+
+    <div class="actions">
+      <a class="btn" href="/">↩ بازگشت و اصلاح ورودی</a>
+    </div>
+
+    <footer class="footer">
+      <small>خروجی را بازبینی حقوقی کنید؛ این سرویس جایگزین مشاورهٔ رسمی وکالتی نیست.</small>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!-- templates/index.html -->
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{ title }} - فرم</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>مشاور حقوقی هوشمند</h1>
+    <p class="muted">نقش خود را انتخاب کنید و شرح پرونده یا سؤال‌تان را وارد کنید.</p>
+
+    <form action="/advise" method="post" class="card">
+      <fieldset>
+        <legend>نقش</legend>
+        <label><input type="radio" name="role" value="user" checked /> کاربر عادی (زبان ساده)</label>
+        <label><input type="radio" name="role" value="lawyer" /> وکیل (زبان تخصصی)</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>عنوان کوتاه پرونده (اختیاری)</legend>
+        <input type="text" name="title" placeholder="مثلاً اختلاف قراردادی با شرکت X" />
+      </fieldset>
+
+      <fieldset>
+        <legend>شرح پرونده / سؤال</legend>
+        <textarea name="details" rows="8" placeholder="شرح کامل مشکل، تاریخ‌ها، اقدامات قبلی و آنچه می‌خواهید بدست آورید..." required></textarea>
+      </fieldset>
+
+      <div class="actions">
+        <button type="submit" id="submit-btn">دریافت مشاوره</button>
+      </div>
+    </form>
+
+    <footer class="footer">
+      <small>توضیح: این سرویس اطلاعات عمومی فراهم می‌کند و جایگزین مشاورهٔ رسمی وکالتی نیست.</small>
+    </footer>
+  </main>
+
+  <script>
+    // ساده: هنگام ارسال نشانگر لودر فعال شود
+    const f = document.querySelector("form");
+    const btn = document.getElementById("submit-btn");
+    if (f && btn) {
+      f.addEventListener("submit", () => {
+        btn.disabled = true;
+        btn.textContent = "در حال پردازش…";
+      });
+    }
+  </script>
+</body>
+</html>
